@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "waleapagun-bucket"
-    key    = "repo/Jenkins-ip/terraform.tfstate"
+    key    = "Extra-repo/Jenkins-ip/terraform.tfstate"
     region = "us-east-1"
 
   }
