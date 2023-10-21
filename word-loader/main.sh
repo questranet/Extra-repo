@@ -1,8 +1,9 @@
 requests=$1
+url=$2
 
- curl -s "https://random-word-api.herokuapp.com/word?number=$requests" | sed -e "s/\[//" -e "s/\]//" | sed -e 's/,/ /g' -e 's/"//g' >/tmp/words
+curl -s "https://random-word-api.herokuapp.com/word?number=$requests" | sed -e "s/\[//" -e 's/\]//' | sed -e 's/,/ /g' -e 's/"//g' >/tmp/words
 
- for word in `cat /tmp/words`; do
-   curl -X POST $url/api/transaction --header "Content-Type: application/json" -d "{\"amount\":\"$RANDOM\",\"desc\":\"$word\"}" &>/tmp/out
-   //curl -X DELETE https://prod.rdevopsb73.online/api/transaction &>>/tmp/out
- done
+for word in `cat /tmp/words`; do
+  curl -X POST $url/api/transaction --header "Content-Type: application/json" -d "{\"amount\":\"$RANDOM\",\"desc\":\"$word\"}" &>/tmp/out
+  //curl -X DELETE https://prod.waleapagun.online.online/api/transaction &>>/tmp/out
+done
