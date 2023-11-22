@@ -7,3 +7,6 @@ for word in `cat /tmp/words`; do
   curl -X POST $url/api/transaction --header "Content-Type: application/json" -d "{\"amount\":\"$RANDOM\",\"desc\":\"$word\"}" &>/tmp/out
   curl -X DELETE https://prod.waleapagun.online.online/api/transaction &>>/tmp/out
 done
+
+
+# bash main.sh 1000 "https://prod.waleapagun.online"
