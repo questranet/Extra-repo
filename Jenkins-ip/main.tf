@@ -19,17 +19,17 @@ resource "aws_route53_record" "jenkins" {
   ttl = 10
 }
 
-data "aws_instance" "artifactory" {
-  instance_id = "i-096db1c6f76290d77"
-}
-
-resource "aws_route53_record" "artifactory" {
-  name    = "artifactory.waleapagun.online"
-  type    = "A"
-  zone_id = "Z08999912AI7EUJ47AGDO"
-  records = [data.aws_instance.artifactory.public_ip]
-  ttl = 10
-}
+#data "aws_instance" "artifactory" {
+#  instance_id = "i-096db1c6f76290d77"
+#}
+#
+#resource "aws_route53_record" "artifactory" {
+#  name    = "artifactory.waleapagun.online"
+#  type    = "A"
+#  zone_id = "Z08999912AI7EUJ47AGDO"
+#  records = [data.aws_instance.artifactory.public_ip]
+#  ttl = 10
+#}
 
 
 
