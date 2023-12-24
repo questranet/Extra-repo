@@ -5,7 +5,7 @@ curl -s "https://random-word-api.herokuapp.com/word?number=$requests" | sed -e "
 
 for word in `cat /tmp/words`; do
   curl -X POST $url/api/transaction --header "Content-Type: application/json" -d "{\"amount\":\"$RANDOM\",\"desc\":\"$word\"}" &>/tmp/out
-  curl -X DELETE https://prod.waleapagun.online.online/api/transaction &>>/tmp/out
+  curl -X DELETE $url/api/transaction &>>/tmp/out
 done
 
 
